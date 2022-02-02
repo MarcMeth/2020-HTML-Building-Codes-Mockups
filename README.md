@@ -1,14 +1,9 @@
 <br />
-<p align="center">
+<p align="center"></p>
   
-  <h3 align="center">Interactive definitions mockup 2022-02-02 Mockup</h3>
+<h3 align="center">Interactive definitions mockup 2022-02-02 Mockup</h3>
 
-  <p align="center">
-    An update to our intent statements
-    <br />
-    <a href="https://marcmeth.github.io/Intent-Statements-2021-05-04-Mockup/nbc2015Intent_en.html"><strong>Explore the current mockup</strong></a>
-  </p>
-</p>
+
 
 
 <!-- ABOUT THE PROJECT 
