@@ -1,3 +1,6 @@
-.wb-panel-l {
-    max-width: 40%;
+.wb-popup-mid {
+    max-width: 60%;
+    max-height: 40%;
+    overflow: auto;
 }
+
