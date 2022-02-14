@@ -1,11 +1,31 @@
 .wb-overlay {
    height: fit-content;
-   width: 60%;
+   width: 50%;
 }
 
-@media only screen and (max-width: 1050px) {
-   .wb-overlay {
-       height: fit-content;
-       width: 90%;
-   }
+.right {
+    padding-left: 5px;
+}
+
+#navHamburger {
+    margin-left: 15px;
+}
+
+
+@media only screen and (min-width: 990px) {
+    #navHamburger {
+        display: none;
+    }
+     #wb-sec {
+         display: block;
+     }
+}
+
+@media only screen and (max-width: 990px) {
+    #wb-sec {
+        display: none;
+    }
+    .wb-overlay {
+        width: 90%;
+    }
 }
