@@ -1,6 +1,6 @@
 
   
-<h2 align="center">Interactive HTML building code 2020 mockups</h2>
+<h2 align="center">Interactive HTML building code 2020 mock-ups</h2>
 
 <br />
 
