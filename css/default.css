@@ -95,10 +95,11 @@ p.subheading {
   height:20;
   background-color: transparent;
   position:absolute;
-  border-color: #26374a;
+  border-color: #717c88;
   border-style:solid;
   top:0px;
   right: 0px;
+  z-index: 150;
 }
 
 .test {
