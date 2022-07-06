@@ -83,3 +83,24 @@ p.subheading {
     background-color: #26374a !important;
     color: white !important;
 }
+
+/* Button STYLES in Nav */
+
+.submenu-head {
+    text-decoration: none;
+}
+
+.btn-submenu {
+  width:50px;
+  height:20;
+  background-color: transparent;
+  position:absolute;
+  border-color: #26374a;
+  border-style:solid;
+  top:0px;
+  right: 0px;
+}
+
+.test {
+    position: relative;
+}

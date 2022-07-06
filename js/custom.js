@@ -1,5 +1,16 @@
 $('.sub-menu ul').hide();
 
+$(".sub-menu div").click(function () {
+  $(this).parent(".sub-menu").children("ul").slideToggle("100");
+  $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
+
+  // return false prevents page from reloading when clicking empty link
+  var href = $(this).attr('href');
+  if (href == "#"){
+    return false
+  }
+});
+
 $(".sub-menu a").click(function () {
   $(this).parent(".sub-menu").children("ul").slideToggle("100");
   $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
@@ -11,6 +22,7 @@ $(".sub-menu a").click(function () {
   }
 });
 
+// Hamburger menu for mobile mode
 $("#navHamburger").click(function () {
   $('#wb-sec').slideToggle("100");
   $(this).children('span').toggleClass('fa-solid fa-xmark')
