@@ -8,7 +8,7 @@
 <p>Please find below the various <strong>non-finalized and most definitely a work in progress</strong> mock-ups.</p>
 <ul>
     <li><a href="https://marcmeth.github.io/2020-HTML-Building-Codes-Mockups/landing.html">Landing page</a></li>
-    <li><a href="https://marcmeth.github.io/2020-HTML-Building-Codes-Mockups/mock1.html">Preface</a></li>
+    <li><a href="https://marcmeth.github.io/2020-HTML-Building-Codes-Mockups/preface.html">Preface</a></li>
     <li><a href="https://marcmeth.github.io/2020-HTML-Building-Codes-Mockups/section11.html">Subsection</a></li>
 </ul>
 
