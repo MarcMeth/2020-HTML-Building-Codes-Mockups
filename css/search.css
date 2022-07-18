@@ -1,0 +1,314 @@
+/* Collections classes */
+
+ul.collections-list
+{
+	list-style-image: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.collections-list > li
+{
+	clear: both;
+	margin: 0px !important;
+	padding: 10px;
+}
+
+ul.collections-list img
+{
+	float: left;
+	margin: 0px 10px 0px 0px;
+	max-width: 61px;
+}
+
+ul.collections-list h3
+{
+	margin-top: 0px;
+}
+
+ul.collections-list h3 a
+{
+	font-weight: bold !important;
+}
+
+ul.featured-collections-list p
+{
+	margin-left: 71px !important;
+	padding-left: 0px;
+	margin-bottom: 0px;
+}
+
+ul.featured-collections-list > li
+{
+	padding: 20px;
+}
+
+ul.featured-collections-list > li + li
+{
+	border-top-color: #069;
+	border-top-style: dotted;
+	border-top-width: 2px;
+}
+
+/* Search form classes */
+
+#wb-main-in form.form-compact [class*="span-"]
+{
+	margin-bottom: 15px;
+}
+
+/* Search results classes */
+
+ol.search-results
+{
+	list-style-image: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+ol.search-results > li
+{
+	clear: both;
+	margin: 0px;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-left: 0px;
+}
+
+ol.search-results li.view-more
+{
+	background-image: none;
+}
+
+ol.search-results input
+{
+	float: left;
+	position: static !important;
+}
+
+ol.search-results input + *,
+ol.search-results div.ui-checkbox + *
+{
+	display: table;
+	padding-left: 10px;
+}
+
+.metadata-title h3
+{
+	padding: 0px;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+.metadata-title img
+{
+	width: auto;
+	vertical-align: top;
+}
+
+.metadata-thumbnail
+{
+	float: right;
+	max-width: 200px;
+	margin-left: 0.75em;
+	margin-bottom: 15px;
+}
+
+.metadata-thumbnail + *
+{
+	display: table;
+	padding-left: 10px;
+}
+
+.metadata-thumbnail + span
+{
+	padding-left: 0px;
+}
+
+.metadata-abstract
+{
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+
+.metadata-collection,
+.metadata-added
+{
+	color: #737373;
+}
+
+.metadata-downloads ol,
+.metadata-downloads ul
+{
+	display: block;
+}
+
+.search-result-options
+{
+	border-bottom: 1px solid #CCC;
+}
+
+.search-result-options summary
+{
+	padding: 10px;
+}
+
+.pagination
+{
+	padding: 10px;
+	text-align: center;
+}
+
+.search-result-buttons
+{
+	padding: 20px 0px 20px 20px;
+	border-bottom: 1px solid #CCC;
+}
+
+.search-result-buttons input
+{
+	display: inline-block;
+}
+
+
+/* WET5 Facet list */
+ul.facet-list
+{
+	margin-bottom: 20px;
+	padding-left: 0;
+}
+
+label.facet-label
+{
+	display: inline;
+	font-weight: normal;
+}
+
+li.facet-listing
+{
+	position: relative;
+	display: block;
+	margin-bottom: -1px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	font-size: 20px;
+	line-height: 1.65em;
+}
+
+li.facet-listing:first-child
+{
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+}
+
+li.facet-listing:last-child
+{
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+li.selected-facet + li.unselected-facet
+{
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #cccccc;
+	padding-top:5px;
+}
+
+li.facet-listing > fieldset > details,
+li.facet-listing > fieldset > details[open],
+li.facet-listing > fieldset > details:not([open]) > summary
+{
+	border: none !important;
+}
+
+summary.facet-heading
+{
+	border-radius: 0px !important;
+}
+
+summary.facet-heading:focus
+{
+	text-decoration: none;
+}
+
+.facet-buttons
+{
+	padding-top: 10px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+}
+
+.facet-buttons > .btn
+{
+	margin-top: 5px;
+}
+
+.facet-buttons > .btn.btn-link
+{
+	font-size: 20px;
+}
+
+
+/* Update table striping in wells */
+.well table.table-striped > tbody > tr:nth-of-type(2n)
+{
+	background-color: #f1f1f1;
+}
+
+
+
+/* Program selection list */
+ul.program-list > li
+{
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+ul.program-list > li:first-child
+{
+	border-top: 1px solid #ddd;
+}
+
+ul.program-list > li:nth-of-type(2n)
+{
+	background-color: #f6f6f6;
+}
+
+ul.program-list > li.active
+{
+	color: #fff;
+	background-color: #2572b4;
+	border-color: #1f5e95;
+}
+
+label.program-label
+{
+	display: inherit;
+	font-weight: normal;
+}
+
+/* Override the size of decade series chart x-axis labels */
+.stats-table.decade-series .flot-text .flot-x-axis
+{
+	font-size: 13px;
+}
+
+.location {
+    line-height: 1.65em;
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 11.5px;
+    color: #006621;
+    padding-left: 0;
+}
+
+.metadata-date{
+    font-size: 20px;
+    line-height: 1.65em;
+    box-sizing: border-box;
+    color: #6f6f6f;
+}

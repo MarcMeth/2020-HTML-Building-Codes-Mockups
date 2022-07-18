@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+  <title>Advanced Search</title>
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <!-- Meta data -->
+  <meta name="description"
+    content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
+  <!-- Meta data-->
+  <!-- Load closure template scripts -->
+  <!--
+			Note: a relative path is being used in this sample. In order to incorporate the script tags in your code, use the following absolute path (depending on the choice of domain). 
+			This path can be used for the following three file names: soyutils.js, wet-en.js, and wet-fr.js.
+
+			canada.ca: https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_44/cdts/compiled/[file name]
+			ssl-templates.services.gc.ca: https://ssl-templates.services.gc.ca/app/cls/WET/gcweb/v4_0_44/cdts/compiled/[file name]
+			templates.service.gc.ca: https://templates.service.gc.ca/app/cls/WET/gcweb/v4_0_44/cdts/compiled/[file name]
+
+			To point to the run version:
+
+			canada.ca: https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/cdts/compiled/[file name]
+			ssl-templates.services.gc.ca: https://ssl-templates.services.gc.ca/rn/cls/WET/gcweb/cdts/compiled/[file name]
+			templates.service.gc.ca: https://templates.service.gc.ca/rn/cls/WET/gcweb/cdts/compiled/[file name]
+		-->
+  <script src="js\soyutils.js"></script>
+  <script src="js\wet-en.js"></script>
+  <noscript>
+    <!-- Write closure fall-back static file -->
+    <!-- refTop.html -->
+  </noscript>
+  <!-- Write closure template -->
+  <script>
+    document.write(wet.builder.refTop({
+      "cdnEnv": "nrcdev"
+    }));
+  </script>
+  <link rel="stylesheet" href="css\search.css">
+</head>
+
+<body vocab="https://schema.org/" typeof="WebPage">
+  <nav aria-label="Skip Links">
+    <ul id="wb-tphp" class="wb-init wb-disable-inited">
+      <li class="wb-slc"><a class="wb-sl" href="#wb-cont">Skip to main content</a></li>
+      <li class="wb-slc visible-xs visible-sm visible-md visible-lg"><a class="wb-sl" href="#wb-info">Skip to "About
+          government"</a></li>
+      <li class="wb-slc visible-md visible-lg"><a class="wb-sl" href="#wb-sec">Skip to section menu</a></li>
+      <li class="wb-slc"><a class="wb-sl" href="?wbdisable=true" rel="alternate">Switch to basic HTML version</a></li>
+    </ul>
+  </nav>
+  <header>
+  </header>
+  <div id="def-top">
+    <!-- Write closure fall-back static file top-en.html  -->
+  </div>
+  <!-- Write closure template -->
+  <script>
+    var defTop = document.getElementById("def-top");
+    defTop.outerHTML = wet.builder.top({
+      "cdnEnv": "nrcdev",
+      "topSecMenu": true,
+      "lngLinks": [{
+        "lang": "fr",
+        "href": "sectionmenu-fr.html",
+        "text": "Français"
+      }],
+      "breadcrumbs": [{
+        "title": "Home",
+        "href": "https://www.canada.ca/en/index.html"
+      }, {
+        "title": "National Research Council Canada ",
+        "href": "https://www.canada.ca/en/index.html"
+      }, {
+        "title": "Electronic Codes Library",
+        "href": "landing.html"
+      }]
+    });
+  </script>
+  <div class="container">
+    <div class="row">
+      <!-- FINISH -->
+      <main role="main" property="mainContentOfPage" class="col-md-9">
+        <h1>Advanced search</h1>
+        <form class="form-horizontal mrgn-tp-0" action="https://nrc-publications.canada.ca/eng/search/advanced/"
+          method="get">
+          <fieldset>
+            <legend>Find results with...</legend>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="all">All of these words</label>
+              <div class="col-sm-5">
+                <input class="form-control full-width" id="all" type="text" name="q" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="any">Any of these words</label>
+              <div class="col-sm-5">
+                <input class="form-control full-width" id="any" type="text" name="q" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="none">None of these words</label>
+              <div class="col-sm-5">
+                <input class="form-control full-width" id="none" type="text" name="q" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="year1">Year from</label>
+              <div class="col-sm-10">
+                <input class="form-control col-sm-2" id="year1" type="text" size="4" maxlength="4" name="y1" value="">
+                <label class="control-label col-sm-1 pddng-rght-lg" for="year2">to</label>
+                <input class="form-control col-sm-2" id="year2" type="text" size="4" maxlength="4" name="y2" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="sort">Sort results by</label>
+              <div class="col-sm-10">
+                <select class="form-control col-sm-2" id="sort" name="s" size="1">
+                  <option value="sc" selected="selected">
+                    Most relevant</option>
+                  <option value="rcd">
+                    Most recently added</option>
+                  <option value="dtp">
+                    Publication date</option>
+                  <option value="yr">
+                    Year</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2" for="pageSize">Results per page</label>
+              <div class="col-sm-10">
+                <select class="form-control col-sm-2" id="pageSize" name="ps" size="1">
+                  <option value="10" selected="selected">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="checkbox">
+              <label for="defaultCheck1"><input checked id="defaultCheck1" type="checkbox" value=""><strong>Latest printings</strong></label>
+            </div>
+
+          </fieldset>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-5">
+              <input class="btn btn-primary mrgn-tp-md" type="submit" title="Search" value="Search" data-ga-event=""
+                data-ga-category="NPARC" data-ga-action="AdvancedSearch">
+            </div>
+          </div>
+        </form>
+        <div>
+          <ul class="small btn-toolbar list-inline mrgn-tp-md">
+            <li>
+              <a
+                href="https://nrc-publications.canada.ca/eng/search/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1"><span
+                  class="fas fa-search"></span>Basic search</a></li>
+            <li>
+              <a href="https://nrc-publications.canada.ca/eng/search/tips/"><span class="fas fa-lightbulb"></span>Search
+                tips</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- RESULTS START HERE -->
+        <div class="row">
+          <div class="col-md-4 col-md-push-8">
+            <h2 class="h3">Filter your results</h2>
+            <form class="mrgn-tp-md" action="https://nrc-publications.canada.ca/eng/search/refine/" method="post">
+              <ul class="facet-list list-unstyled">
+
+                <li class="facet-listing" id="facet_gn">
+                  <fieldset class="mrgn-bttm-0 pddng-tp-0">
+                    <legend class="wb-inv">Type</legend>
+                    <details class="mrgn-bttm-0" open="open">
+                      <summary class="facet-heading">Type</summary>
+                      <ol class="list-unstyled mrgn-bttm-sm collapsed">
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_4">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_4" type="checkbox" name="fn" value="gn:ar">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Codes <span class="nowrap">(4,146<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_5">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_5" type="checkbox" name="fn" value="gn:tr">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Guides <span class="nowrap">(287<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                      </ol>
+                    </details>
+                  </fieldset>
+                </li>
+                
+                
+                <li class="facet-listing" id="facet_sue">
+                  <fieldset class="mrgn-bttm-0 pddng-tp-0">
+                    <legend class="wb-inv">Subject</legend>
+                    <details class="mrgn-bttm-0" open="open">
+                      <summary class="facet-heading">Subject</summary>
+                      <ol class="list-unstyled mrgn-bttm-sm collapsed">
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_103">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_103" type="checkbox" name="fn" value="sue:Energy efficiency">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Energy efficiency <span class="nowrap">(112<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_104">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_104" type="checkbox" name="fn" value="sue:Codes &amp; guides">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Codes &amp; guides <span class="nowrap">(97<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_105">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_105" type="checkbox" name="fn" value="sue:energy">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                energy <span class="nowrap">(80<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_106">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_106" type="checkbox" name="fn" value="sue:energy conservation">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                energy conservation <span class="nowrap">(68<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_107">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_107" type="checkbox" name="fn" value="sue:lighting">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Fire <span class="nowrap">(59<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_108">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_108" type="checkbox" name="fn" value="sue:Lighting">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Lighting <span class="nowrap">(58<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_109">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_109" type="checkbox" name="fn" value="sue:Ventilation">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Ventilation <span class="nowrap">(45<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_110">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_110" type="checkbox" name="fn" value="sue:Heat performance">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Heat performance <span class="nowrap">(39<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_111">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_111" type="checkbox" name="fn" value="sue:Heating">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Heating <span class="nowrap">(35<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_112">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_112" type="checkbox" name="fn" value="sue:Insulation">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Insulation <span class="nowrap">(29<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_113">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_113" type="checkbox" name="fn" value="sue:Moisture performance">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Moisture performance <span class="nowrap">(29<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_114">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_114" type="checkbox" name="fn" value="sue:Walls">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Walls <span class="nowrap">(28<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_115">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_115" type="checkbox" name="fn" value="sue:building">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                building <span class="nowrap">(28<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_116">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_116" type="checkbox" name="fn"
+                                  value="sue:density functional theory">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                density functional theory <span class="nowrap">(28<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_117">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_117" type="checkbox" name="fn" value="sue:Building envelope">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Building envelope <span class="nowrap">(26<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_118">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_118" type="checkbox" name="fn" value="sue:Daylighting">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Daylighting <span class="nowrap">(26<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_119">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_119" type="checkbox" name="fn" value="sue:ice">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                ice <span class="nowrap">(26<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_120">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_120" type="checkbox" name="fn" value="sue:silicon">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                silicon <span class="nowrap">(26<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_121">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_121" type="checkbox" name="fn" value="sue:ventilation">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                ventilation <span class="nowrap">(25<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_122">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_122" type="checkbox" name="fn" value="sue:Housing technology">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Housing technology <span class="nowrap">(24<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_123">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_123" type="checkbox" name="fn" value="sue:energy efficiency">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                energy efficiency <span class="nowrap">(24<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_124">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_124" type="checkbox" name="fn" value="sue:Air quality">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Air quality <span class="nowrap">(23<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_125">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_125" type="checkbox" name="fn"
+                                  value="sue:Oxygen reduction reaction">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Oxygen reduction reaction <span class="nowrap">(23<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_126">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_126" type="checkbox" name="fn" value="sue:hydrogen">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                hydrogen <span class="nowrap">(23<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_127">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_127" type="checkbox" name="fn" value="sue:Windows">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Windows <span class="nowrap">(22<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_128">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_128" type="checkbox" name="fn" value="sue:X ray diffraction">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                X ray diffraction <span class="nowrap">(22<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_129">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_129" type="checkbox" name="fn" value="sue:thermal insulation">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                thermal insulation <span class="nowrap">(22<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_130">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_130" type="checkbox" name="fn" value="sue:Electrodes">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Electrodes <span class="nowrap">(21<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_131">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_131" type="checkbox" name="fn" value="sue:organic compounds">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                organic compounds <span class="nowrap">(21<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_132">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_132" type="checkbox" name="fn" value="sue:Fuel cells">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Fuel cells <span class="nowrap">(20<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_133">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_133" type="checkbox" name="fn" value="sue:Electrolytic reduction">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Electrolytic reduction <span class="nowrap">(19<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_134">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_134" type="checkbox" name="fn" value="sue:Hydrogen">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Hydrogen <span class="nowrap">(19<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_135">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_135" type="checkbox" name="fn" value="sue:consumption">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                consumption <span class="nowrap">(19<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_136">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_136" type="checkbox" name="fn" value="sue:environmental">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                environmental <span class="nowrap">(19<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_137">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_137" type="checkbox" name="fn" value="sue:insulation">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                insulation <span class="nowrap">(19<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_138">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_138" type="checkbox" name="fn" value="sue:windows">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                windows <span class="nowrap">(19<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_139">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_139" type="checkbox" name="fn" value="sue:Platinum">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                Platinum <span class="nowrap">(18<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_140">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_140" type="checkbox" name="fn" value="sue:durability">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                durability <span class="nowrap">(18<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_141">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_141" type="checkbox" name="fn" value="sue:office buildings">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                office buildings <span class="nowrap">(18<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_142">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_142" type="checkbox" name="fn"
+                                  value="sue:transmission electron microscopy">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                transmission electron microscopy <span class="nowrap">(18<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                      </ol>
+                     
+                    </details>
+                  </fieldset>
+                </li>
+                
+                
+                <li class="facet-listing" id="facet_yr">
+                  <fieldset class="mrgn-bttm-0 pddng-tp-0">
+                    <legend class="wb-inv">Year</legend>
+                    <details class="mrgn-bttm-0" open="open">
+                      <summary class="facet-heading">Year</summary>
+                      <ol class="list-unstyled mrgn-bttm-sm collapsed">
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_147">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_147" type="checkbox" name="fn" value="yr:2022">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2022 <span class="nowrap">(41<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_148">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_148" type="checkbox" name="fn" value="yr:2021">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2021 <span class="nowrap">(103<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_149">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_149" type="checkbox" name="fn" value="yr:2020">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2020 <span class="nowrap">(187<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_150">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_150" type="checkbox" name="fn" value="yr:2019">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2019 <span class="nowrap">(209<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_151">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_151" type="checkbox" name="fn" value="yr:2018">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2018 <span class="nowrap">(172<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_152">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_152" type="checkbox" name="fn" value="yr:2017">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2017 <span class="nowrap">(187<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_153">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_153" type="checkbox" name="fn" value="yr:2016">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2016 <span class="nowrap">(112<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_154">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_154" type="checkbox" name="fn" value="yr:2015">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2015 <span class="nowrap">(225<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_155">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_155" type="checkbox" name="fn" value="yr:2014">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2014 <span class="nowrap">(244<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_156">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_156" type="checkbox" name="fn" value="yr:2013">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2013 <span class="nowrap">(294<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_157">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_157" type="checkbox" name="fn" value="yr:2012">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2012 <span class="nowrap">(296<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_158">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_158" type="checkbox" name="fn" value="yr:2011">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2011 <span class="nowrap">(269<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_159">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_159" type="checkbox" name="fn" value="yr:2010">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2010 <span class="nowrap">(162<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_160">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_160" type="checkbox" name="fn" value="yr:2009">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2009 <span class="nowrap">(184<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_161">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_161" type="checkbox" name="fn" value="yr:2008">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2008 <span class="nowrap">(107<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_162">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_162" type="checkbox" name="fn" value="yr:2007">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2007 <span class="nowrap">(157<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_163">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_163" type="checkbox" name="fn" value="yr:2006">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2006 <span class="nowrap">(118<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_164">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_164" type="checkbox" name="fn" value="yr:2005">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2005 <span class="nowrap">(126<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_165">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_165" type="checkbox" name="fn" value="yr:2004">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2004 <span class="nowrap">(110<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_166">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_166" type="checkbox" name="fn" value="yr:2003">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2003 <span class="nowrap">(92<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_167">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_167" type="checkbox" name="fn" value="yr:2002">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2002 <span class="nowrap">(90<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_168">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_168" type="checkbox" name="fn" value="yr:2001">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2001 <span class="nowrap">(84<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_169">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_169" type="checkbox" name="fn" value="yr:2000">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2000 <span class="nowrap">(44<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_170">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_170" type="checkbox" name="fn" value="yr:1999">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1999 <span class="nowrap">(50<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_171">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_171" type="checkbox" name="fn" value="yr:1998">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1998 <span class="nowrap">(44<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_172">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_172" type="checkbox" name="fn" value="yr:1997">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1997 <span class="nowrap">(50<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_173">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_173" type="checkbox" name="fn" value="yr:1996">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1996 <span class="nowrap">(55<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_174">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_174" type="checkbox" name="fn" value="yr:1995">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1995 <span class="nowrap">(86<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_175">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_175" type="checkbox" name="fn" value="yr:1994">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1994 <span class="nowrap">(66<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_176">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_176" type="checkbox" name="fn" value="yr:1993">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1993 <span class="nowrap">(65<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_177">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_177" type="checkbox" name="fn" value="yr:1992">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1992 <span class="nowrap">(40<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_178">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_178" type="checkbox" name="fn" value="yr:1991">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1991 <span class="nowrap">(23<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_179">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_179" type="checkbox" name="fn" value="yr:1990">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1990 <span class="nowrap">(31<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_180">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_180" type="checkbox" name="fn" value="yr:1989">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1989 <span class="nowrap">(17<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_181">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_181" type="checkbox" name="fn" value="yr:1988">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1988 <span class="nowrap">(21<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_182">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_182" type="checkbox" name="fn" value="yr:1987">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1987 <span class="nowrap">(20<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_183">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_183" type="checkbox" name="fn" value="yr:1986">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1986 <span class="nowrap">(36<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_184">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_184" type="checkbox" name="fn" value="yr:1985">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1985 <span class="nowrap">(32<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_185">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_185" type="checkbox" name="fn" value="yr:1984">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1984 <span class="nowrap">(34<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_186">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_186" type="checkbox" name="fn" value="yr:1983">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1983 <span class="nowrap">(49<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_187">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_187" type="checkbox" name="fn" value="yr:1982">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1982 <span class="nowrap">(41<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_188">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_188" type="checkbox" name="fn" value="yr:1981">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1981 <span class="nowrap">(30<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_189">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_189" type="checkbox" name="fn" value="yr:1980">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1980 <span class="nowrap">(31<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_190">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_190" type="checkbox" name="fn" value="yr:1979">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1979 <span class="nowrap">(36<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_191">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_191" type="checkbox" name="fn" value="yr:1978">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1978 <span class="nowrap">(32<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_192">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_192" type="checkbox" name="fn" value="yr:1977">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1977 <span class="nowrap">(21<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_193">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_193" type="checkbox" name="fn" value="yr:1976">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1976 <span class="nowrap">(9<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_194">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_194" type="checkbox" name="fn" value="yr:1975">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1975 <span class="nowrap">(8<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_195">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_195" type="checkbox" name="fn" value="yr:1974">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1974 <span class="nowrap">(2<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_196">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_196" type="checkbox" name="fn" value="yr:1973">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1973 <span class="nowrap">(4<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_197">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_197" type="checkbox" name="fn" value="yr:1972">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1972 <span class="nowrap">(8<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_198">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_198" type="checkbox" name="fn" value="yr:1971">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1971 <span class="nowrap">(3<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_199">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_199" type="checkbox" name="fn" value="yr:1970">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1970 <span class="nowrap">(4<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_200">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_200" type="checkbox" name="fn" value="yr:1969">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1969 <span class="nowrap">(6<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_201">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_201" type="checkbox" name="fn" value="yr:1968">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1968 <span class="nowrap">(5<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_202">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_202" type="checkbox" name="fn" value="yr:1967">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1967 <span class="nowrap">(6<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_203">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_203" type="checkbox" name="fn" value="yr:1966">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1966 <span class="nowrap">(7<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_204">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_204" type="checkbox" name="fn" value="yr:1965">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1965 <span class="nowrap">(5<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_205">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_205" type="checkbox" name="fn" value="yr:1964">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1964 <span class="nowrap">(3<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_206">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_206" type="checkbox" name="fn" value="yr:1963">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1963 <span class="nowrap">(6<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_207">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_207" type="checkbox" name="fn" value="yr:1962">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1962 <span class="nowrap">(8<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_208">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_208" type="checkbox" name="fn" value="yr:1961">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1961 <span class="nowrap">(9<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_209">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_209" type="checkbox" name="fn" value="yr:1960">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1960 <span class="nowrap">(2<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_210">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_210" type="checkbox" name="fn" value="yr:1959">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1959 <span class="nowrap">(5<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_211">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_211" type="checkbox" name="fn" value="yr:1958">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1958 <span class="nowrap">(1<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_212">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_212" type="checkbox" name="fn" value="yr:1957">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1957 <span class="nowrap">(2<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_213">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_213" type="checkbox" name="fn" value="yr:1954">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1954 <span class="nowrap">(1<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_214">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_214" type="checkbox" name="fn" value="yr:1953">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1953 <span class="nowrap">(2<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_215">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_215" type="checkbox" name="fn" value="yr:1951">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1951 <span class="nowrap">(2<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_216">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_216" type="checkbox" name="fn" value="yr:1949">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1949 <span class="nowrap">(2<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet" style="display: none;">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_217">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_217" type="checkbox" name="fn" value="yr:1943">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1943 <span class="nowrap">(2<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                      </ol>
+                     
+                    </details>
+                  </fieldset>
+                </li>
+                <li class="facet-listing" id="facet_gn">
+                  <fieldset class="mrgn-bttm-0 pddng-tp-0">
+                    <legend class="wb-inv">Printings</legend>
+                    <details class="mrgn-bttm-0" open="open">
+                      <summary class="facet-heading">Printings</summary>
+                      <ol class="list-unstyled mrgn-bttm-sm collapsed">
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_4">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_4" type="checkbox" name="fn" value="gn:ar">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                1st <span class="nowrap">(14<span class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_5">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_5" type="checkbox" name="fn" value="gn:tr">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                2nd <span class="nowrap">(12<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="pddng-bttm-sm unselected-facet">
+                          <div class="row">
+                            <label class="facet-label" for="facet_chk_5">
+                              <span class="col-xs-1 text-left">
+                                <input id="facet_chk_5" type="checkbox" name="fn" value="gn:tr">
+                              </span>
+                              <span class="col-xs-10 text-left">
+                                3rd <span class="nowrap">(6<span
+                                    class="wb-inv">&nbsp;results</span>)</span>
+                              </span>
+                            </label>
+                          </div>
+                        </li>
+                      </ol>
+                    </details>
+                  </fieldset>
+                </li>
+                <li class="facet-listing facet-buttons">
+                  <button type="submit" class="btn btn-primary" name="rfi" value="Apply filters">
+                    <span class="fas fa-check"></span>Apply filters</button>
+                  <a rel="nofollow"
+                    href="https://nrc-publications.canada.ca/eng/search/advanced/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1"
+                    class="btn btn-default">Reset filters</a>
+                </li>
+              </ul>
+              <div class="wb-inv">
+                <input type="hidden" name="cb" value="https://nrc-publications.canada.ca/eng/search/advanced/">
+                <input type="hidden" name="q" value="energy"><input type="hidden" name="q" value=""><input type="hidden"
+                  name="q" value=""><input type="hidden" name="y1" value=""><input type="hidden" name="y2"
+                  value=""><input type="hidden" name="s" value="sc"><input type="hidden" name="ps" value="10"><input
+                  type="hidden" name="av" value="1"><input type="hidden" name="m" value="1"></div>
+            </form>
+          </div>
+          <div class="col-md-8 col-md-pull-4">
+            <h2 class="h3">
+             [number] search results for "[search term]"</h2>
+            <div class="clearfix"></div>
+            <div class="mrgn-tp-md">
+              <ol class="search-results">
+                <li>
+                  <div>
+                    <article class="mrgn-bttm-lg" itemscope="itemscope" itemtype="https://schema.org/ScholarlyArticle">
+                      <div class="metadata-title">
+                        <h3 class="h4" itemprop="name headline"><a
+                            href="https://nrc-publications.canada.ca/eng/view/object/?id=4cb104cb-e541-4231-a2a3-0f62ea4f65f4&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=0"
+                            itemprop="url">[Search result page title]</a></h3>
+                      </div>
+                      <div class="location">[Publication Title] - [Printing #]</div>
+                      <div><p><span class="metadata-date">[MMM DD, YYYY] -</span> <span class="metadata-description"> [description/highlight of search result. Seach terms in <strong>strong</strong>]</span></p></div>
+                      
+                    </article>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <article class="mrgn-bttm-lg" itemscope="itemscope" itemtype="https://schema.org/ScholarlyArticle">
+                      <div class="metadata-title">
+                        <h3 class="h4" itemprop="name headline"><a
+                            href="https://nrc-publications.canada.ca/eng/view/object/?id=4cb104cb-e541-4231-a2a3-0f62ea4f65f4&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=0"
+                            itemprop="url">1.1.1.1 Application of this Code</a></h3>
+                      </div>
+                      <div class="location">National Building Code 2020 - Printing #3</div>
+                      <div><p><span class="metadata-date">[07-18, 2022] -</span> <span class="metadata-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Omnia contraria, quos etiam <strong>1.1.1.1</strong> esse vultis. Istic sum, inquit.</span></p></div>
+                      
+                    </article>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <article class="mrgn-bttm-lg" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                      <div class="metadata-title">
+                        <h3 class="h4" itemprop="name headline"><a
+                            href="https://nrc-publications.canada.ca/eng/view/object/?id=0fb8d60a-aac4-40f7-9629-054af6054f1c&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=2"
+                            itemprop="url">Recovery from radiation damage in biological systems</a></h3>
+                      </div>
+                      <div class="metadata-authors"><span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=James%2C+A.&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span itemprop="name">James,
+                                A.</span></span></a></span>; <span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Rixon%2C+R.&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span itemprop="name">Rixon,
+                                R.</span></span></a></span>; <span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Whitfield%2C+James&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span
+                                itemprop="name">Whitfield, James</span></span></a></span>; <span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Newcombe%2C+H.&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span itemprop="name">Newcombe,
+                                H.</span></span></a></span></div>
+                      <div><span itemprop="isPartOf" itemtype="https://schema.org/Book" itemscope="itemscope"><span
+                            itemprop="name">Peaceful Uses of Atomic Energy</span></span>, Publication date: <span
+                          class="nowrap"><span itemprop="datePublished">1971</span></span>, Pages: <span
+                          itemprop="pageStart">6</span>–<span itemprop="pageEnd">16</span></div>
+                    </article>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <article class="mrgn-bttm-lg" itemscope="itemscope" itemtype="https://schema.org/Book">
+                      <div class="metadata-title">
+                        <h3 class="h4" itemprop="name headline"><a
+                            href="https://nrc-publications.canada.ca/eng/view/object/?id=1d9a0b74-852b-4544-aa89-d033c4fc6f5a&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=3"
+                            itemprop="url">Chemical heat pump "Phase A" study</a></h3>
+                      </div>
+                      <div class="metadata-authors"><span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Acres+International+Limited&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Organization" itemscope="itemscope"><span
+                                itemprop="name">Acres International Limited</span></span></a></span>; <a
+                          href="https://nrc-publications.canada.ca/eng/search/?q=National+Research+Council+of+Canada.+Division+of+Energy.+Heat+Pump+Program.&amp;ps=10&amp;s=sc"><span
+                            class="wb-inv">Search for: </span><span itemprop="author"
+                            itemtype="https://schema.org/Organization" itemscope="itemscope"><span
+                              itemprop="name">National Research Council of Canada. Division of Energy. Heat Pump
+                              Program.</span></span></a></div>
+                      <div>Publication date: <span class="nowrap"><span itemprop="datePublished">1985</span></span>
+                      </div>
+                    </article>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <article class="mrgn-bttm-lg" itemscope="itemscope" itemtype="https://schema.org/Book">
+                      <div class="metadata-title">
+                        <h3 class="h4" itemprop="name headline"><a
+                            href="https://nrc-publications.canada.ca/eng/view/object/?id=5604d85f-6591-47d3-b64c-17e47d633366&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=4"
+                            itemprop="url">Heat, Air and Moisture Transport Through Building Materials and Components :
+                            Symbols and Terminology</a></h3>
+                      </div>
+                      <div class="metadata-authors"><span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Kumaran%2C+M.+K.&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span itemprop="name">Kumaran,
+                                M. K.</span></span></a></span>; <a
+                          href="https://nrc-publications.canada.ca/eng/search/?q=International+Energy+Agency+%28IEA%29%2C+Energy+Conservation+in+Buildings+and+Community+Systems&amp;ps=10&amp;s=sc"><span
+                            class="wb-inv">Search for: </span><span itemprop="author"
+                            itemtype="https://schema.org/Organization" itemscope="itemscope"><span
+                              itemprop="name">International Energy Agency (IEA), Energy Conservation in Buildings and
+                              Community Systems</span></span></a>; <a
+                          href="https://nrc-publications.canada.ca/eng/search/?q=IEA+Annex+24+%28Heat%2C+Air+and+Moisture+Transfer+Through+New+and+Retrofitted+Insulated+Envelope+Parts+%28Hamtie%29%29+%3A+Task+3+%28Material+and+Layer+Properties%29&amp;ps=10&amp;s=sc"><span
+                            class="wb-inv">Search for: </span><span itemprop="author"
+                            itemtype="https://schema.org/Organization" itemscope="itemscope"><span itemprop="name">IEA
+                              Annex 24 (Heat, Air and Moisture Transfer Through New and Retrofitted Insulated Envelope
+                              Parts (Hamtie)) : Task 3 (Material and Layer Properties)</span></span></a></div>
+                      <div>Publication date: <span class="nowrap"><span itemprop="datePublished">1993</span></span>
+                      </div>
+                    </article>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <article class="mrgn-bttm-lg" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                      <div class="metadata-title">
+                        <h3 class="h4" itemprop="name headline"><a
+                            href="https://nrc-publications.canada.ca/eng/view/object/?id=c8248b54-d916-4794-aed2-ba29184ab90c&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=5"
+                            itemprop="url">Role of calcium chloride in concrete</a></h3>
+                      </div>
+                      <div class="metadata-authors"><span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Ramachandran%2C+V.+S.&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span
+                                itemprop="name">Ramachandran, V. S.</span></span></a></span>; <a
+                          href="https://nrc-publications.canada.ca/eng/search/?q=Energy%2C+Mines+and+Resources%2C+Ottawa&amp;ps=10&amp;s=sc"><span
+                            class="wb-inv">Search for: </span><span itemprop="author"
+                            itemtype="https://schema.org/Organization" itemscope="itemscope"><span
+                              itemprop="name">Energy, Mines and Resources, Ottawa</span></span></a></div>
+                      <div><span itemprop="isPartOf" itemtype="https://schema.org/Book" itemscope="itemscope"><span
+                            itemprop="name">Progress in Concrete Technology</span></span>, Publication date: <span
+                          class="nowrap"><span itemprop="datePublished">1980</span></span>, Pages: <span
+                          itemprop="pageStart">421</span>–<span itemprop="pageEnd">450</span></div>
+                    </article>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <article class="mrgn-bttm-lg" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                      <div class="metadata-title">
+                        <h3 class="h4" itemprop="name headline"><a
+                            href="https://nrc-publications.canada.ca/eng/view/object/?id=5aa37a63-7f4a-434a-aaa6-cb660ff4546e&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=6"
+                            itemprop="url">Ice/structure interaction: laboratory and numerical modelling of iceberg
+                            impact: summary and progress report</a></h3>
+                      </div>
+                      <div class="metadata-authors"><span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Murray%2C+J.+J.&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span itemprop="name">Murray,
+                                J. J.</span></span></a></span></div>
+                      <div class="metadata-authors"><a
+                          href="https://nrc-publications.canada.ca/eng/search/?q=National+Energy+Board%2FPanel+on+Energy+Research+%26+Development&amp;ps=10&amp;s=sc"><span
+                            class="wb-inv">Search for: </span><span itemprop="sponsor"
+                            itemtype="https://schema.org/Organization" itemscope="itemscope"><span
+                              itemprop="name">National Energy Board/Panel on Energy Research &amp;
+                              Development</span></span></a></div>
+                      <div class="metadata-abstract"><span itemprop="description">This is a summary and progress report
+                          on the development of an ice/structure interaction computer model being developed under
+                          PERD/NEB funding. The report describes the overall approach to the…</span> <a
+                          href="https://nrc-publications.canada.ca/eng/view/object/?id=5aa37a63-7f4a-434a-aaa6-cb660ff4546e&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=6"
+                          class="nowrap">view more<span class="wb-invisible">: Ice/structure interaction: laboratory and
+                            numerical modelling of iceberg impact: summary and progress report</span></a></div>
+                      <div><span itemprop="isPartOf" itemtype="https://schema.org/Series" itemscope="itemscope"><span
+                            itemprop="name">Laboratory Memorandum (National Research Council of Canada. Institute for
+                            Marine Dynamics); no. LM-1996-05</span></span>, Publication date: <span class="nowrap"><span
+                            itemprop="datePublished">1996</span></span></div>
+                      <div class="metadata-downloads">
+                        <ol class="list-unstyled inline-list seperated-list">
+                          <li><a
+                              href="https://nrc-publications.canada.ca/eng/view/ft/?id=5aa37a63-7f4a-434a-aaa6-cb660ff4546e"
+                              itemprop="url" data-ga-event="" data-ga-category="NPARC"
+                              data-ga-action="DownloadFINALTEXT:Clicked"
+                              data-ga-label="5aa37a63-7f4a-434a-aaa6-cb660ff4546e"><span
+                                class="fas fa-download"></span>View final version<span class="wb-invisible">:
+                                <span>Ice/structure interaction: laboratory and numerical modelling of iceberg impact:
+                                  summary and progress report</span></span></a> (<span class="icon-pdf"></span>PDF, 1
+                            MB)</li>
+                        </ol>
+                      </div>
+                    </article>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <article class="mrgn-bttm-lg" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                      <div class="metadata-title">
+                        <h3 class="h4" itemprop="name headline"><a
+                            href="https://nrc-publications.canada.ca/eng/view/object/?id=8373edab-4e6b-4b7d-afe4-406c05b8074b&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=7"
+                            itemprop="url">International Energy Agency: Energy Conservation in Buildings and Community
+                            Systems Programme: Annex IX: Minimum Ventilation Rates: Final Report of Working phases I and
+                            II</a></h3>
+                      </div>
+                      <div class="metadata-authors"><span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Tamura%2C+G.+T.&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span itemprop="name">Tamura,
+                                G. T.</span></span></a></span></div>
+                      <div class="metadata-authors"><a
+                          href="https://nrc-publications.canada.ca/eng/search/?q=International+Energy+Agency.+Energy+Conservation+in+Buildings+and+Community+Systems+Programme&amp;ps=10&amp;s=sc"><span
+                            class="wb-inv">Search for: </span><span itemprop="sponsor"
+                            itemtype="https://schema.org/Organization" itemscope="itemscope"><span
+                              itemprop="name">International Energy Agency. Energy Conservation in Buildings and
+                              Community Systems Programme</span></span></a></div>
+                      <div>ISBN: <span itemprop="isbn">3-921213-87-8</span>, Publication date: <span
+                          class="nowrap"><span itemprop="datePublished">1987-11</span></span></div>
+                    </article>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <article class="mrgn-bttm-lg" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                      <div class="metadata-title">
+                        <h3 class="h4" itemprop="name headline"><a
+                            href="https://nrc-publications.canada.ca/eng/view/object/?id=e804f609-1814-414e-877a-c966a962971e&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=8"
+                            itemprop="url">NRC centre for ice loads on Beaufort Sea structures</a></h3>
+                      </div>
+                      <div class="metadata-authors"><span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Timco%2C+G.&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span itemprop="name">Timco,
+                                G.</span></span></a></span></div>
+                      <div class="metadata-authors"><a
+                          href="https://nrc-publications.canada.ca/eng/search/?q=Partially+sponsored+by+Panel+on+Energy+Research+and+Development%2C+National+Energy+Board%2C+Gulf+Canada+Resources+Ltd.%2C+Imperial+Oil+%28Esso%29%2C+and+Amoco+Canada+%2F+Canmar.&amp;ps=10&amp;s=sc"><span
+                            class="wb-inv">Search for: </span><span itemprop="sponsor"
+                            itemtype="https://schema.org/Organization" itemscope="itemscope"><span
+                              itemprop="name">Partially sponsored by Panel on Energy Research and Development, National
+                              Energy Board, Gulf Canada Resources Ltd., Imperial Oil (Esso), and Amoco Canada /
+                              Canmar.</span></span></a></div>
+                      <div class="metadata-abstract"><span itemprop="description">This report gives an overview of the
+                          activities and holdings of the NRC Centre for Ice/Structure Interaction.</span></div>
+                      <div><span itemprop="isPartOf" itemtype="https://schema.org/Series" itemscope="itemscope"><span
+                            itemprop="name">Technical Report (National Research Council of Canada. Institute for Marine
+                            Dynamics); no. TR-1995-18</span></span>, Publication date: <span class="nowrap"><span
+                            itemprop="datePublished">1995</span></span></div>
+                    </article>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <article class="mrgn-bttm-lg" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+                      <div class="metadata-title">
+                        <h3 class="h4" itemprop="name headline"><a
+                            href="https://nrc-publications.canada.ca/eng/view/object/?id=c4fcb391-1ab7-438d-a929-00b2bb9d468a&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=9"
+                            itemprop="url">Deashing of vacuum residue from the CANMET coprocessing unit. Part II :
+                            agglomeration and flotation methods</a></h3>
+                      </div>
+                      <div class="metadata-authors"><span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Majid%2C+Abdul&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span itemprop="name">Majid,
+                                Abdul</span></span></a></span>; <span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Sparks%2C+Bryan+D.&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span itemprop="name">Sparks,
+                                Bryan D.</span></span></a></span>; <span class="nowrap"><a
+                            href="https://nrc-publications.canada.ca/eng/search/?q=Ikura%2C+Michio&amp;ps=10&amp;s=sc"><span
+                              class="wb-inv">Search for: </span><span itemprop="author"
+                              itemtype="https://schema.org/Person" itemscope="itemscope"><span itemprop="name">Ikura,
+                                Michio</span></span></a></span></div>
+                      <div class="metadata-authors"><a
+                          href="https://nrc-publications.canada.ca/eng/search/?q=Energy+Research+Laboratories%2C+CANMET%2C+Energy%2C+Mines+and+Resources&amp;ps=10&amp;s=sc"><span
+                            class="wb-inv">Search for: </span><span itemprop="sponsor"
+                            itemtype="https://schema.org/Organization" itemscope="itemscope"><span
+                              itemprop="name">Energy Research Laboratories, CANMET, Energy, Mines and
+                              Resources</span></span></a></div>
+                      <div class="metadata-abstract"><span itemprop="description">This is the second part of a report
+                          summarizing the results of an investigation of deashing vacuum residue from the CANMET
+                          coal-oil coprocessing unit. The results of a number of preliminary…</span> <a
+                          href="https://nrc-publications.canada.ca/eng/view/object/?id=c4fcb391-1ab7-438d-a929-00b2bb9d468a&amp;q=energy&amp;q=&amp;q=&amp;pg=1&amp;ps=10&amp;s=sc&amp;m=1&amp;av=1&amp;i=9"
+                          class="nowrap">view more<span class="wb-invisible">: Deashing of vacuum residue from the
+                            CANMET coprocessing unit. Part II : agglomeration and flotation methods</span></a></div>
+                      <div><span itemprop="isPartOf" itemtype="https://schema.org/Series" itemscope="itemscope"><span
+                            itemprop="name">Client Report; no. EC-1203-90S</span></span>, Publication date: <span
+                          class="nowrap"><span itemprop="datePublished">1990-11-01</span></span></div>
+                      <div class="metadata-downloads">
+                        <ol class="list-unstyled inline-list seperated-list">
+                          <li><a
+                              href="https://nrc-publications.canada.ca/eng/view/ft/?id=c4fcb391-1ab7-438d-a929-00b2bb9d468a"
+                              itemprop="url" data-ga-event="" data-ga-category="NPARC"
+                              data-ga-action="DownloadFINALTEXT:Clicked"
+                              data-ga-label="c4fcb391-1ab7-438d-a929-00b2bb9d468a"><span
+                                class="fas fa-download"></span>View final version<span class="wb-invisible">:
+                                <span>Deashing of vacuum residue from the CANMET coprocessing unit. Part II :
+                                  agglomeration and flotation methods</span></span></a> (<span
+                              class="icon-pdf"></span>PDF, 2 MB)</li>
+                        </ol>
+                      </div>
+                    </article>
+                  </div>
+                </li>
+              </ol>
+              <div class="clearfix"></div>
+              <div class="row text-center">
+                <nav>
+                  <ul class="pagination">
+                    <li class="active">
+                      <a href="https://nrc-publications.canada.ca/eng/search/advanced/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1&amp;pg=1"
+                        title="You are currently on page 1">1</a>
+                    </li>
+                    <li>
+                      <a href="https://nrc-publications.canada.ca/eng/search/advanced/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1&amp;pg=2"
+                        title="Go to page 2">2</a>
+                    </li>
+                    <li>
+                      <a href="https://nrc-publications.canada.ca/eng/search/advanced/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1&amp;pg=3"
+                        title="Go to page 3">3</a>
+                    </li>
+                    <li>
+                      <a href="https://nrc-publications.canada.ca/eng/search/advanced/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1&amp;pg=4"
+                        title="Go to page 4">4</a>
+                    </li>
+                    <li>
+                      <a href="https://nrc-publications.canada.ca/eng/search/advanced/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1&amp;pg=5"
+                        title="Go to page 5">5</a>
+                    </li>
+                    <li>
+                      <a href="https://nrc-publications.canada.ca/eng/search/advanced/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1&amp;pg=6"
+                        title="Go to page 6">6</a>
+                    </li>
+                    <li>
+                      <a href="https://nrc-publications.canada.ca/eng/search/advanced/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1&amp;pg=7"
+                        title="Go to page 7">7</a>
+                    </li>
+                    <li>
+                      <a href="https://nrc-publications.canada.ca/eng/search/advanced/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1&amp;pg=8"
+                        title="Go to page 8">8</a>
+                    </li>
+                    <li>
+                      <a href="https://nrc-publications.canada.ca/eng/search/advanced/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1&amp;pg=9"
+                        title="Go to page 9">9</a>
+                    </li>
+                    <li>
+                      <a rel="next"
+                        href="https://nrc-publications.canada.ca/eng/search/advanced/?q=energy&amp;q=&amp;q=&amp;y1=&amp;y2=&amp;s=sc&amp;ps=10&amp;av=1&amp;m=1&amp;pg=2"
+                        title="Next">Next</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="def-preFooter">
+          <!-- Write closure fall-back static file -->
+          <!-- preFooter-en.html -->
+        </div>
+        <!-- Write closure template -->
+        <script>
+          var defPreFooter = document.getElementById("def-preFooter");
+          defPreFooter.outerHTML = wet.builder.preFooter({
+            "cdnEnv": "nrcdev",
+            "dateModified": "2021-05-25"
+          });
+        </script>
+      </main>
+
+      <!-- Write closure template -->
+
+    </div>
+  </div>
+  <div id="def-footer">
+    <!-- Write closure fall-back static file -->
+    <!-- footer-en.html -->
+  </div>
+  <!-- Write closure template -->
+  <script>
+    var defFooter = document.getElementById("def-footer");
+    defFooter.outerHTML = wet.builder.footer({
+      "cdnEnv": "nrcdev"
+    });
+  </script>
+  <!-- Write closure template -->
+  <script>
+    document.write(wet.builder.refFooter({
+      "cdnEnv": "nrcdev"
+    }));
+  </script>
+</body>
+
+</html>
