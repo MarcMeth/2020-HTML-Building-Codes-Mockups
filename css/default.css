@@ -29,6 +29,7 @@
 #wb-sec.wb-sec.pubs-nav {
     font-size: 16px;
     line-height: 1.4375;
+    padding-bottom: 0px;
 }
 
 /* HEADING STYLES */
@@ -52,11 +53,6 @@ p.subheading {
 
 .recent .thumbnail img {
     max-height: 250px;
-}
-
-.active {
-    background-color: #26374a !important;
-    color: white !important;
 }
 
 /* Button css for left-hand nav */

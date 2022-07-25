@@ -1,0 +1,123 @@
+/********************/
+/* GENERAL SETTINGS */
+/********************/
+
+.clear {
+    clear: both;
+}
+
+
+/********************/
+/* EXPANDABLE LIST  */
+/********************/
+#listContainer {
+    margin-top: 15px;
+}
+
+#expList ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 1px 0px 0px 0px;
+    cursor: pointer;
+}
+
+#expList p {
+    margin: 0;
+    display: block;
+}
+
+
+#expList li {
+    line-height: 140%;
+    text-indent: 0px;
+    background-position: 1px 3px;
+    padding-left: 15px;
+    background-repeat:repeat;
+}
+
+#expList {
+    clear: both;
+    padding-left: 0%;
+}
+
+#expList li{
+   border-style:solid;
+   border-width: 1px 0px 0px 0px;
+   padding-bottom: 2px;
+   padding-top: 2px;
+   margin-right: 1px;
+   border-radius: 10px;
+   border-color: #d8d8d8;
+}
+
+div#toc {
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+.listControl {
+    margin-bottom: 15px;
+}
+
+.listControl a {
+    color: #555555;
+    cursor: pointer;
+    height: 1.5em;
+    line-height: 1.5em;
+    margin-right: 5px;
+    padding: 4px 10px;
+}
+
+.listControl a:hover {
+    background-color: yellow;
+    color: #222222;
+    font-weight: normal;
+}
+
+/********************/
+/* Filter TOC css  */
+/********************/
+
+.active,
+.active:focus,
+.active:hover
+.active:visited {
+    background: #26374a;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: small;
+    padding: 8px 12px;
+}
+
+.active a{
+  color: #fff !important;
+}
+
+@media only screen and (max-width: 990px) {
+  /* For tablets: */
+    div#toc {
+        height: 200px;
+    }
+}
+@media only screen and (min-width: 990px) {
+  /* For tablets: */
+    div#toc {
+        height: 550px;
+    }
+}
+
+/* Style the toc header */
+.tocheader {
+  padding: 10px 16px;
+  background: #555;
+  color: #f1f1f1;
+  border-radius: 4px;
+  font-size: 17.6px;
+  size: 100%;
+  margin-right:9px;
+}
+
+.pddng-rght-0 {
+    padding-right: 0px !important;
+}
