@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+  <title>Advanced Search</title>
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <!-- Meta data -->
+  <meta name="description"
+    content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
+  <!-- Meta data-->
+  <!-- Load closure template scripts -->
+  <!--
+			Note: a relative path is being used in this sample. In order to incorporate the script tags in your code, use the following absolute path (depending on the choice of domain). 
+			This path can be used for the following three file names: soyutils.js, wet-en.js, and wet-fr.js.
+
+			canada.ca: https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_44/cdts/compiled/[file name]
+			ssl-templates.services.gc.ca: https://ssl-templates.services.gc.ca/app/cls/WET/gcweb/v4_0_44/cdts/compiled/[file name]
+			templates.service.gc.ca: https://templates.service.gc.ca/app/cls/WET/gcweb/v4_0_44/cdts/compiled/[file name]
+
+			To point to the run version:
+
+			canada.ca: https://www.canada.ca/etc/designs/canada/cdts/gcweb/rn/cdts/compiled/[file name]
+			ssl-templates.services.gc.ca: https://ssl-templates.services.gc.ca/rn/cls/WET/gcweb/cdts/compiled/[file name]
+			templates.service.gc.ca: https://templates.service.gc.ca/rn/cls/WET/gcweb/cdts/compiled/[file name]
+		-->
+  <script src="js\soyutils.js"></script>
+  <script src="js\wet-en.js"></script>
+  <noscript>
+    <!-- Write closure fall-back static file -->
+    <!-- refTop.html -->
+  </noscript>
+  <!-- Write closure template -->
+  <script>
+    document.write(wet.builder.refTop({
+      "cdnEnv": "nrcdev"
+    }));
+  </script>
+  <link rel="stylesheet" href="css\search.css">
+</head>
+
+<body vocab="https://schema.org/" typeof="WebPage">
+  <nav aria-label="Skip Links">
+    <ul id="wb-tphp" class="wb-init wb-disable-inited">
+      <li class="wb-slc"><a class="wb-sl" href="#wb-cont">Skip to main content</a></li>
+      <li class="wb-slc visible-xs visible-sm visible-md visible-lg"><a class="wb-sl" href="#wb-info">Skip to "About
+          government"</a></li>
+      <li class="wb-slc visible-md visible-lg"><a class="wb-sl" href="#wb-sec">Skip to section menu</a></li>
+      <li class="wb-slc"><a class="wb-sl" href="?wbdisable=true" rel="alternate">Switch to basic HTML version</a></li>
+    </ul>
+  </nav>
+  <header>
+  </header>
+  <div id="def-top">
+    <!-- Write closure fall-back static file top-en.html  -->
+  </div>
+  <!-- Write closure template -->
+  <script>
+    var defTop = document.getElementById("def-top");
+    defTop.outerHTML = wet.builder.top({
+      "cdnEnv": "nrcdev",
+      "topSecMenu": true,
+      "lngLinks": [{
+        "lang": "fr",
+        "href": "sectionmenu-fr.html",
+        "text": "Français"
+      }],
+      "breadcrumbs": [{
+        "title": "Home",
+        "href": "https://www.canada.ca/en/index.html"
+      }, {
+        "title": "National Research Council Canada ",
+        "href": "https://www.canada.ca/en/index.html"
+      }, {
+        "title": "Electronic Codes Library",
+        "href": "landing.html"
+      }]
+    });
+  </script>
+  <div class="container">
+    <div class="row">
+      <!-- FINISH -->
+      <main role="main" property="mainContentOfPage" class="col-md-9">
+        <h1>Options</h1>
+
+        <div class="checkbox">
+            <label for="defaultCheck1"><input id="defaultCheck1" type="checkbox" value=""><strong>Opt into seing updates</strong></label>
+         </div>
+         <div class="alert alert-info mrgn-tp-md">
+            <p>Updated text are displayed in red. Updated text will be announced through screen readers.</p>
+         </div>
+        <div id="def-preFooter">
+          <!-- Write closure fall-back static file -->
+          <!-- preFooter-en.html -->
+        </div>
+        <!-- Write closure template -->
+        <script>
+          var defPreFooter = document.getElementById("def-preFooter");
+          defPreFooter.outerHTML = wet.builder.preFooter({
+            "cdnEnv": "nrcdev",
+            "dateModified": "2021-05-25"
+          });
+        </script>
+      </main>
+
+      <!-- Write closure template -->
+
+    </div>
+  </div>
+  <div id="def-footer">
+    <!-- Write closure fall-back static file -->
+    <!-- footer-en.html -->
+  </div>
+  <!-- Write closure template -->
+  <script>
+    var defFooter = document.getElementById("def-footer");
+    defFooter.outerHTML = wet.builder.footer({
+      "cdnEnv": "nrcdev"
+    });
+  </script>
+  <!-- Write closure template -->
+  <script>
+    document.write(wet.builder.refFooter({
+      "cdnEnv": "nrcdev"
+    }));
+  </script>
+</body>
+
+</html>

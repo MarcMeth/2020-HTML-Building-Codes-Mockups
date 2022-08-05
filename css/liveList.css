@@ -14,12 +14,10 @@
     margin-top: 15px;
 }
 
-#expList ul,
-li {
+#expList ul, #expList li {
     list-style: none;
     margin: 0;
     padding: 1px 0px 0px 0px;
-    cursor: pointer;
 }
 
 #expList p {
