@@ -108,3 +108,6 @@ ul > li.sub-menu > ul > li.sub-menu > div > button {
 h1.provisional.gc-thickline {
     font-size: 36px;
 }
+
+p.gc-thickline{border-bottom:none}
+p.gc-thickline::after{border-bottom:.18em solid #af3c43;content:"";display:block;padding-bottom:8px;width:70px}
