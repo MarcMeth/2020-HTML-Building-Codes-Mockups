@@ -111,3 +111,19 @@ h1.provisional.gc-thickline {
 
 p.gc-thickline{border-bottom:none}
 p.gc-thickline::after{border-bottom:.18em solid #af3c43;content:"";display:block;padding-bottom:8px;width:70px}
+
+/* LIST OVERIDE STYLES */
+
+.li-icon {
+    content: "\f35d";
+    position: relative;
+    left: -46px;
+    overflow: hidden;
+    margin-right: -25px;
+}
+
+/* Heading Copy clipboard icon */
+h5 > button.btn.btn-link.btn-sm {
+    padding: 0;
+   
+}
